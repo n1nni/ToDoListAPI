@@ -6,14 +6,13 @@ namespace ToDoListAPI.Repositories.Contracts
 {
     public interface IToDoRepository
     {
-        public Task<IEnumerable<ToDo>> GetAllTodos();
-        public Task<IEnumerable<ToDo>> GetUncompletedToDos();
-        public Task<IEnumerable<ToDo>> GetCompletedToDos();
-        public Task<string> MakeTodoDone(Guid todoId);
-        public Task<ToDo> AddToDo(ToDoDTO todo);
-        public Task<IActionResult> UpdateTodo(Guid guid);
-        
-        public Task<IActionResult> DeleteTodo(Guid guid);
+        public Task<IEnumerable<ToDo>> GetAllTodosAsync();
+        public Task<IEnumerable<ToDo>> GetUncompletedToDosAsync();
+        public Task<IEnumerable<ToDo>> GetCompletedToDosAsync();
+        public Task<string> MakeTodoDoneAsync(Guid todoId);
+        public Task<IEnumerable<ToDo>> AddToDoAsync(ToDoDTO todo);
+        public Task<string> UpdateTodoAsync(Guid guid, string title, string description, bool completed);
+        public Task<string> DeleteTodoAsync(Guid guid);
 
     }
 }
